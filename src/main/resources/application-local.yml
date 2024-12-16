@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/anymindpayment
+  data:
+    redis:
+      host: localhost
+  flyway:
+    url: jdbc:postgresql://localhost:5432/anymindpayment

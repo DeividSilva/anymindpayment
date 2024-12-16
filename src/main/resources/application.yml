@@ -1,0 +1,60 @@
+spring.application.name: payment
+
+logging:
+  level:
+    any.mind.payment: INFO
+    org.springframework.boot: INFO
+
+management:
+  server:
+    port: 9090
+server:
+  port: 8090
+
+springdoc:
+  documentation:
+    info:
+      title: Payment API for AnyMind by Deivid
+      description: Documentation of the Payment API.
+      version: v1
+    apis:
+      - name: Api Payment
+        description: Payment endpoints.
+  override-with-generic-response: false
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    doc-expansion: none
+    operations-sorter: alpha
+    tags-sorter: alpha
+    filter: true
+    path: /swagger-ui
+    disable-swagger-default-url: true
+    csrf.enabled: false
+  default-produces-media-type: application/json
+
+spring:
+  datasource:
+    username: user
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+  jackson:
+    time-zone: America/Sao_Paulo
+  jmx:
+    enabled: false
+  mvc:
+    time-zone: America/Sao_Paulo
+  web:
+    locale: pt_BR
+  messages:
+    basename: i18n/messages
+  data:
+    redis:
+      port: 6379
+      password:
+      timeout: 3000ms
+  flyway:
+    enabled: true
+    user: user
+    password: 1234
